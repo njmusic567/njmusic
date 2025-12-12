@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channel Name | Official Website</title>
+    <style>
+        /* --- GLOBAL VARIABLES --- */
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #161616;
+            --primary: #ff0000; /* YouTube Red */
+            --accent: #ffffff;
+            --text-gray: #a0a0a0;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        /* --- RESET & BASE STYLES --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--accent);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a:hover { color: var(--primary); }
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 0 20px;
+        }
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-content p { color: var(--text-gray); font-size: 1.2rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* --- VIDEO GRID --- */
+        .section { padding: 80px 5%; }
+        .section-title { font-size: 2rem; margin-bottom: 40px; border-left: 4px solid var(--primary); padding-left: 20px; }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .video-card:hover { transform: translateY(-5px); }
+        .thumbnail {
+            width: 100%;
+            height: 200px;
+            background-color: #333; /* Placeholder for image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            position: relative;
+        }
+        .play-icon { font-size: 3rem; opacity: 0.5; }
+        .card-info { padding: 20px; }
+        .card-info h3 { font-size: 1.1rem; margin-bottom: 10px; }
+        .card-info p { color: var(--text-gray); font-size: 0.9rem; }
+
+        /* --- ABOUT & STATS --- */
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        .stat-item { text-align: center; margin: 10px; }
+        .stat-number { font-size: 2.5rem; font-weight: bold; color: var(--primary); }
+        .stat-label { color: var(--text-gray); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            border-top: 1px solid #222;
+            color: var(--text-gray);
+        }
+        .socials { margin-bottom: 20px; }
+        .socials a { margin: 0 10px; font-size: 1.2rem; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for mobile demo */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">CHANNEL<span>NAME</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#videos">Videos</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="https://youtube.com" class="cta-btn">Subscribe Now</a>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Create. Inspire.<br>Entertain.</h1>
+            <p>Welcome to the official hub. High-quality content released weekly. Join the community and never miss an update.</p>
+            <a href="#videos" class="cta-btn" style="background: white; color: black;">Watch Latest Video</a>
+        </div>
+    </header>
+
+     <section class="section" id="videos">
+    <h2>Popular YouTube Videos</h2>
+    <div class="recipes">
+      <div class="card">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/Kepqxzho2EQ?si=hJIiuJAsX8VecQN0" frameborder="0" allowfullscreen></iframe>
+        <h3>video</h3>
+      </div>
+      <div class="card">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/Kepqxzho2EQ?si=hJIiuJAsX8VecQN0" frameborder="0" allowfullscreen></iframe>
+        <h3>video</h3>
+      </div>
+      <div class="card">
+        <iframe width="100%" height="200" src="https://www.youtube.com/embed/Kepqxzho2EQ?si=hJIiuJAsX8VecQN0" frameborder="0" allowfullscreen></iframe>
+        <h3>video</h3>
+      </div>
+       </div>
+      <div class="card">
+         <iframe width="100%" height="200" src="https://www.youtube.com/embed/Kepqxzho2EQ?si=hJIiuJAsX8VecQN0" frameborder="0" allowfullscreen></iframe>
+        <h3>video</h3>
+      </div>
+    </div>
+  </section>
+
+    <section id="about" class="section" style="background: #0f0f0f;">
+        <h2 class="section-title">The Mission</h2>
+        <p style="color: #a0a0a0; max-width: 800px; font-size: 1.1rem;">
+            This channel is dedicated to bringing you the highest quality insights and entertainment. 
+            We focus on storytelling, cinematography, and authentic experiences.
+        </p>
+        
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">100K+</div>
+                <div class="stat-label">Subscribers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5M+</div>
+                <div class="stat-label">Total Views</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">Weekly</div>
+                <div class="stat-label">Uploads</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="socials">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">Discord</a>
+        </div>
+        <p>&copy; 2025 Channel Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
