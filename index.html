@@ -1,167 +1,44 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Board Result Portal</title>
+    <title>My Ordinary Website</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #e9ecef;
-            margin: 0;
-            padding: 0;
-        }
-
-        .header {
-            background-color: #003366;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 4px solid #ffcc00;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 700px;
-            margin: 30px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-
-        .search-box {
-            text-align: center;
-            margin-bottom: 30px;
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            width: 200px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            text-transform: uppercase;
-        }
-
-        .btn-go {
-            padding: 10px 25px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .btn-go:hover {
-            background-color: #0056b3;
-        }
-
-        /* Marksheet Table Styling */
-        #resultTable {
-            display: none;
-            margin-top: 20px;
-        }
-
-        .student-info {
-            margin-bottom: 15px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-            color: #333;
-        }
-
-        .total-row {
-            font-weight: bold;
-            background-color: #fff9c4;
-        }
-
-        .result-status {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        .pass { color: green; }
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; color: #333; }
+        header { background: #f4f4f4; padding: 1rem; text-align: center; border-bottom: 1px solid #ddd; }
+        nav a { margin: 0 15px; text-decoration: none; color: #333; font-weight: bold; }
+        .hero { padding: 60px 20px; text-align: center; background: #e2e2e2; }
+        .content { max-width: 800px; margin: 20px auto; padding: 20px; }
+        footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #777; }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <h2>BOARD OF SECONDARY & HIGHER SECONDARY EDUCATION</h2>
-</div>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 
-<div class="container">
-    <div class="search-box">
-        <label>Enter Seat Number: </label>
-        <input type="text" id="seatNum" placeholder="000001">
-        <button class="btn-go" onclick="generateResult()">Go</button>
+    <section class="hero">
+        <h1>Welcome to My Website</h1>
+        <p>This is a simple, ordinary place on the internet.</p>
+    </section>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/6TC3rlflXV8?si=uvW7OWmUUPrGVA_D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6TC3rlflXV8?si=7l315yMwNgvYhRmZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6TC3rlflXV8?si=aHP-nIDCakYjXprC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<div class="content">
+        <h2>About This Site</h2>
+        <p>Sometimes you don't need flashing lights or complex animations. You just need a place to share information clearly and effectively.</p>
     </div>
 
-    <div id="resultTable">
-        <div class="student-info">
-            <p><strong>Seat Number:</strong> <span id="displaySeat"></span></p>
-            <p><strong>Student Name:</strong> ABC STUDENT NAME</p>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Subject Code</th>
-                    <th>Subject Name</th>
-                    <th>Marks</th>
-                    <th>Grade</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>10</td>
-                    <td>MATHEMATICS</td>
-                    <td>33/50</td>
-                    <td>PASS</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div class="result-status">
-            Result: <span class="pass" (PASS)</span>
-        </div>
-    </div>
-</div>
-
-<script>
-    function generateResult() {
-        var seat = document.getElementById('seatNum').value;
-        
-        if (seat.trim() === "") {
-            alert("Please enter a valid Seat Number");
-            return;
-        }
-
-        // સીટ નંબર બતાવવો અને ટેબલ અનહાઈડ કરવું
-        document.getElementById('displaySeat').innerText = seat.toUpperCase();
-        document.getElementById('resultTable').style.display = "block";
-    }
-</script>
+    <footer>
+        &copy; 2026 My Ordinary Website
+    </footer>
 
 </body>
 </html>
